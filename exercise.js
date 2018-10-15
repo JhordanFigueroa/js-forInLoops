@@ -35,8 +35,15 @@ var donutBox = {
 	types: ["old fashion", "glazed", "chocolate", "jelly-filled", "sprinkles", "red velvet"],
 	taste: "fabulous"
 };
+console.log(donutBox); 
 
-
+function output(x){
+	for (var prop in x);{
+		console.log(prop);
+	};
+	return x
+}; 
+output(donutBox); 
 
 /*2.  Create a function that will take in an object and loop through the properties of that object.
 Console.log the values of the object. Use the donutBox object from the previous exercise above*/
@@ -44,6 +51,7 @@ Console.log the values of the object. Use the donutBox object from the previous 
 /*@param {Object}
 @return {Object}*/
 
+//Repeat 
 
 
 /*3. Create a function that will take in an object and will delete the taste property from the donutBox object above.*/
@@ -51,7 +59,12 @@ Console.log the values of the object. Use the donutBox object from the previous 
 /*@param {Object}
 @return {Object}*/
 
+function removeProp(obj){
+	delete obj.taste; 
+	return obj;
+}
 
+console.log(removeProp(donutBox)); 
 
 /*4. Create a function that will take in an object and will return all the values of the object in an array.*/
 
@@ -66,6 +79,14 @@ var legend = {
 	hobbies: ["martial arts", "fitness", "dancing", "knitting", "coding"]
 };
 
+function sendArray(y){
+	var arr = [];
+	for (var prop in y){
+		arr.push(y[prop]); 
+	}
+	return y;
+}; 
+console.log(sendArray(legend)); 
 
 /*5. Create a function that will take in an object and will return the number of properties (key -value pairs) in the object. Use the legend object above.
 
@@ -76,6 +97,18 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 /*@param {Object}
 @return {Number}*/
 
+function getKeys(x){
+	var iGotKeys = 0; 
+	for (var key in x){
+		if (x.hasOwnProperty(key)){
+			iGotKeys++;
+		}
+
+	}
+	return iGotKeys;
+}; 
+
+console.log(getKeys(legend)); 
 
 
 /*6. Create a function that will take in an object and check to see if the legend object has a property of 'occupation'.*/
@@ -83,6 +116,15 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects
 /*@param {Object}
 @return {Object}*/
 
+function check(z){
+	var checkIf = 0; 
+	for (var see in z){
+		if (z.hasOwnProperty('occupation')){
+			return ("Yes Mr. Lee takes names and cashes checks for a living")
+		} else ("Homie fake news");
+			}
+		}
 
+console.log(check(legend)); 
 
 
